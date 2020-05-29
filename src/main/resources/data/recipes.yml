@@ -77,7 +77,7 @@ recipes:
   - name: "Sooji ka Halwa / Sheera"
     url: "https://www.youtube.com/watch?v=9KsM8q9n13g"
 
-  - name: "Fish"
+  - name: "Fish ki Sabzi"
     url: "https://www.youtube.com/watch?v=PpKCLohDDaQ"
 
   - name: "Prowns"
@@ -88,5 +88,11 @@ recipes:
 
   - name: "Fish Fry"
     url: "https://www.youtube.com/watch?v=XaPIumr1_mQ"
+
+  - name: "Pizza"
+    url: "https://www.youtube.com/watch?v=56eRAEY1t8A"
+
+  - name: "Sandwich"
+    url: "https://www.youtube.com/watch?v=b8d0gpsXzEk"
 
 
