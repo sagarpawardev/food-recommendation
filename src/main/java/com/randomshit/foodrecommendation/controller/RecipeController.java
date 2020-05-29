@@ -2,6 +2,8 @@ package com.randomshit.foodrecommendation.controller;
 
 import com.randomshit.foodrecommendation.pojo.Recipe;
 import com.randomshit.foodrecommendation.service.RecipeService;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +24,8 @@ public class RecipeController {
         return recipeService.getRecipes();
     }
 
-    @RequestMapping(path = "recommend", method = GET)
+    @CrossOrigin
+    @GetMapping(path = "recommend")
     public Recipe getRecommendation(){
         return recipeService.getRecommendation();
     }
