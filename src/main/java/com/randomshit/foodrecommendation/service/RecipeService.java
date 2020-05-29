@@ -39,15 +39,10 @@ public class RecipeService {
 
     //<editor-fold desc="Private Method">
     private void loadRecipes(){
-        try {
-            File resource = new ClassPathResource("data/recipes.yml").getFile();
-            Yaml yml = new Yaml();
-            RecipeList recipeList = yml.loadAs(new FileInputStream(resource), RecipeList.class);
-            recipes.addAll(recipeList.getRecipes());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Yaml yml = new Yaml();
+        InputStream is = getClass().getClassLoader().getResourceAsStream("data/recipes.yml");
+        RecipeList recipeList = yml.loadAs(is, RecipeList.class);
+        recipes.addAll(recipeList.getRecipes());
     }
     //</editor-fold>
 }
