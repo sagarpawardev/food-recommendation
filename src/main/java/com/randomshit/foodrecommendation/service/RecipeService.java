@@ -2,7 +2,7 @@ package com.randomshit.foodrecommendation.service;
 
 import com.randomshit.foodrecommendation.pojo.Recipe;
 import com.randomshit.foodrecommendation.pojo.RecipeList;
-import org.springframework.util.ResourceUtils;
+import org.springframework.core.io.ClassPathResource;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
@@ -40,7 +40,7 @@ public class RecipeService {
     //<editor-fold desc="Private Method">
     private void loadRecipes(){
         try {
-            File resource = ResourceUtils.getFile("classpath:data/recipes.yml");
+            File resource = new ClassPathResource("data/recipes.yml").getFile();
             Yaml yml = new Yaml();
             RecipeList recipeList = yml.loadAs(new FileInputStream(resource), RecipeList.class);
             recipes.addAll(recipeList.getRecipes());
