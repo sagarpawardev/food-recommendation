@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="recipeService" class="com.randomshit.foodrecommendation.service.RecipeService"/>
+    <!--<bean id="recipeService" class="com.randomshit.foodrecommendation.service.RecipeService"/>-->
 
 </beans>
