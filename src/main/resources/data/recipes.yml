@@ -1,98 +1,203 @@
+---
 recipes:
   - name: "Aloo Paratha"
     url: "https://www.youtube.com/watch?v=SfaPcyQA5rc"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Poha"
     url: "https://www.youtube.com/watch?v=8LwYrE7PaC0"
+    tags:
+      - tag: veg
+      - tag: snack
 
   - name: "Dosa"
     url: "https://www.youtube.com/watch?v=1QU11QPbV3U"
+    tags:
+      - tag: veg
+      - tag: meal
+      - tag: snack
 
   - name: "Pulao"
     url: "https://www.youtube.com/watch?v=qZKX3OOc2dk"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Maggi"
     url: "https://www.youtube.com/watch?v=PzzlF3r1l2g"
+    tags:
+      - tag: veg
+      - tag: meal
+      - tag: snack
 
   - name: "Upma"
     url: "https://www.youtube.com/watch?v=F2Rvwl7BYmw"
+    tags:
+      - tag: veg
+      - tag: snack
 
   - name: "Daal Chawal"
     url: "https://www.youtube.com/watch?v=Utly_hN-gPM"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Gobhi Ki Sabzi"
     url: "https://www.youtube.com/watch?v=CYpueCIV4YY"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Daal Khichdi"
     url: "https://www.youtube.com/watch?v=c1tYk3I-H70"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Fried Rice"
     url: "https://www.youtube.com/watch?v=aWArcqFI9ag"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Roti Ka Poha / Roti Chura"
     url: "https://www.youtube.com/watch?v=ccHALOXbl_M"
+    tags:
+      - tag: veg
+      - tag: snack
 
   - name: "Kadhi"
     url: "https://www.youtube.com/watch?v=NLFOt-vzU1M"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Pakoda"
     url: "https://www.youtube.com/watch?v=dGd6GTNMOP8"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Mix Daal"
     url: "https://www.youtube.com/watch?v=6DHYyoG5r9c"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Toor Daal"
     url: "https://www.youtube.com/watch?v=6DHYyoG5r9c"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Methi Ke Parathe"
     url: "https://www.youtube.com/watch?v=YkuXhgei6Uw"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Masaala Puri"
     url: "https://www.youtube.com/watch?v=DwXxIv8S6gg"
+    tags:
+      - tag: veg
+      - tag: snack
 
   - name: "Egg Bhurji"
     url: "https://www.youtube.com/watch?v=EMTCplPvF0Y"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Boiled Egg"
     url: "https://www.youtube.com/watch?v=5Ca3X_YiWbk"
+    tags:
+      - tag: veg
+      - tag: snack
 
   - name: "Omelette"
     url: "https://www.youtube.com/watch?v=w6Be4fSTkdM"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Chane ki Sabzi"
     url: "https://www.youtube.com/watch?v=1hC3EQ9UFrI"
+    tags:
+      - tag: veg
+      - tag: meal
+
+  - name: "Kaala Chana Chaat"
+    url: "https://www.youtube.com/watch?v=0HkFHDCcLUk"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Sabudana Khichdi"
     url: "https://www.youtube.com/watch?v=Sboyf70QR9A"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Tawa Pulao"
     url: "https://www.youtube.com/watch?v=W7VCZ4wuTb4"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Aloo Ticky"
     url: "https://www.youtube.com/watch?v=JOcnHa8FnBM"
+    tags:
+      - tag: veg
+      - tag: snack
 
   - name: "Tamaatar ki Chatni"
     url: "https://www.youtube.com/watch?v=iXVqF9MonDE"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Sooji ka Halwa / Sheera"
     url: "https://www.youtube.com/watch?v=9KsM8q9n13g"
+    tags:
+      - tag: veg
+      - tag: snack
 
   - name: "Fish ki Sabzi"
     url: "https://www.youtube.com/watch?v=PpKCLohDDaQ"
+    tags:
+      - tag: non-veg
+      - tag: meal
 
-  - name: "Prowns"
+  - name: "Prawns"
     url: "https://www.youtube.com/watch?v=1Kv8otboMyg"
+    tags:
+      - tag: non-veg
+      - tag: meal
 
   - name: "Chicken Curry"
     url: "https://www.youtube.com/watch?v=8zRqfj6uOoI"
+    tags:
+      - tag: non-veg
+      - tag: meal
 
   - name: "Fish Fry"
     url: "https://www.youtube.com/watch?v=XaPIumr1_mQ"
+    tags:
+      - tag: non-veg
+      - tag: meal
 
   - name: "Pizza"
     url: "https://www.youtube.com/watch?v=56eRAEY1t8A"
+    tags:
+      - tag: veg
+      - tag: meal
 
   - name: "Sandwich"
     url: "https://www.youtube.com/watch?v=b8d0gpsXzEk"
+    tags:
+      - tag: veg
+      - tag: snack
 
 
