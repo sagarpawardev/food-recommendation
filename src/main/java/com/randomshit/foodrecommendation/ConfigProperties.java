@@ -5,4 +5,5 @@ import org.springframework.context.annotation.ImportResource;
 
 @Configuration
 @ImportResource({"classpath*:spring.xml"})
-public class ConfigProperties { }
+public class ConfigProperties {
+}

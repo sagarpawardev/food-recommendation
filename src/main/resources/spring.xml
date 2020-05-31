@@ -4,6 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--<bean id="recipeService" class="com.randomshit.foodrecommendation.service.RecipeService"/>-->
+    <bean id="modelMapper" class="org.modelmapper.ModelMapper" />
+
+    <bean id="recipeConverter" class="com.randomshit.foodrecommendation.converter.RecipeConverter" />
+
+    <bean id="recipeFacade" class="com.randomshit.foodrecommendation.facade.RecipeFacade"/>
 
 </beans>
