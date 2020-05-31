@@ -61,6 +61,9 @@ public class RecipeService {
         Yaml yml = new Yaml();
         InputStream is = getClass().getClassLoader().getResourceAsStream("data/recipes.yml");
         RecipeList recipeList = yml.loadAs(is, RecipeList.class);
+        for(Recipe recipe : recipeList.getRecipes()){
+            recipeDao.save(recipe);
+        }
         recipeDao.saveAll(recipeList.getRecipes());
     }
     //</editor-fold>

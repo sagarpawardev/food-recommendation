@@ -59,7 +59,7 @@ recipes:
       - tag: meal
 
   - name: "Daal Khichdi"
-    id: "DAALKHICHDI"
+    id: "DALKHICHDI"
     url: "https://www.youtube.com/watch?v=c1tYk3I-H70"
     tags:
       - tag: veg
@@ -178,7 +178,7 @@ recipes:
       - tag: snack
 
   - name: "Tamaatar ki Chatni"
-    id: "TAMATCHATNI"
+    id: "TAMATCHATN"
     url: "https://www.youtube.com/watch?v=iXVqF9MonDE"
     tags:
       - tag: veg
@@ -199,7 +199,7 @@ recipes:
       - tag: meal
 
   - name: "Prawns Curry"
-    id: "PRAWNSCURRY"
+    id: "PRAWNCURRY"
     url: "https://www.youtube.com/watch?v=1Kv8otboMyg"
     tags:
       - tag: non-veg

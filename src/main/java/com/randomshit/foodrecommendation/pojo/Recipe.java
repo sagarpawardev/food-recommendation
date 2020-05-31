@@ -1,6 +1,9 @@
 package com.randomshit.foodrecommendation.pojo;
 
+import org.hibernate.validator.constraints.URL;
+
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,10 +14,12 @@ import static javax.persistence.FetchType.EAGER;
 public class Recipe{
 
     @Id
+    @Pattern(regexp = "^[A-Z]{3,10}$")
     private String id;
 
     private String name;
 
+    @URL
     private String url;
 
     @OneToMany( cascade = ALL, orphanRemoval = true, fetch = EAGER)
