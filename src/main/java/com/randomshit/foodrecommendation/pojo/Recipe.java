@@ -1,23 +1,17 @@
 package com.randomshit.foodrecommendation.pojo;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
 import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.FetchType.EAGER;
 
 @Entity
-public class Recipe {
+public class Recipe{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id = -1;
+    private String id;
 
     private String name;
 
@@ -53,11 +47,11 @@ public class Recipe {
         this.url = url;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

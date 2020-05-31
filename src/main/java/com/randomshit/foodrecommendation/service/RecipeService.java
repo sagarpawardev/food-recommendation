@@ -21,7 +21,7 @@ public class RecipeService {
     @Autowired
     private RecipeDao recipeDao;
 
-    private Random random = new Random();
+    private final Random random = new Random();
 
 
     public List<Recipe> getRecipes() {

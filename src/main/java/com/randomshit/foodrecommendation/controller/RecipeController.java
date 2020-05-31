@@ -1,12 +1,12 @@
 package com.randomshit.foodrecommendation.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.randomshit.foodrecommendation.dto.RecipeDto;
 import com.randomshit.foodrecommendation.exception.NotFoundException;
-import com.randomshit.foodrecommendation.pojo.Recipe;
-import com.randomshit.foodrecommendation.service.RecipeService;
+import com.randomshit.foodrecommendation.facade.RecipeFacade;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -16,27 +16,27 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 @RequestMapping("/recipes")
 public class RecipeController {
 
-    @Resource(name="recipeService")
-    private RecipeService recipeService;
+    @Autowired
+    private RecipeFacade recipeFacade;
 
     @RequestMapping(method = GET)
-    public List<Recipe> getRecipes(){
-        return recipeService.getRecipes();
+    public List<RecipeDto> getRecipes(){
+        return recipeFacade.getRecipes();
     }
 
     @CrossOrigin
     @GetMapping(path = "recommend")
     @HystrixCommand(fallbackMethod = "fallbackGetRecommendation")
-    public Recipe getRecommendation(
+    public RecipeDto getRecommendation(
             @RequestParam(name = "tags", required = false, defaultValue = EMPTY)  List<String> tags
     ) throws NotFoundException {
-        return recipeService.getRecommendation(tags);
+        return recipeFacade.getRecommendation(tags);
     }
 
     //<editor-fold desc="Fallback Method">
 
-    public Recipe fallbackGetRecommendation(List<String> tags){
-        Recipe recipe = new Recipe();
+    public RecipeDto fallbackGetRecommendation(List<String> tags){
+        RecipeDto recipe = new RecipeDto();
         recipe.setName("Noting to Recommend");
         recipe.setUrl(EMPTY);
         return recipe;
