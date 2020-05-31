@@ -10,6 +10,7 @@ import java.util.Set;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
 import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.EAGER;
 
 @Entity
 public class Recipe {
@@ -22,7 +23,7 @@ public class Recipe {
 
     private String url;
 
-    @OneToMany( cascade = ALL, orphanRemoval = true)
+    @OneToMany( cascade = ALL, orphanRemoval = true, fetch = EAGER)
     @JoinColumn(name = "recipe_id")
     private Set<RecipeTag> tags = new HashSet<>();
 
