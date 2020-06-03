@@ -7,11 +7,11 @@ import javax.validation.constraints.Pattern;
 import java.util.HashSet;
 import java.util.Set;
 
-import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.EAGER;
 
 @Entity
-public class Recipe{
+public class Recipe {
 
     @Id
     @Pattern(regexp = "^[A-Z]{3,10}$")
@@ -22,18 +22,13 @@ public class Recipe{
     @URL
     private String url;
 
-    @OneToMany( cascade = ALL, orphanRemoval = true, fetch = EAGER)
+    @ElementCollection( targetClass = String.class, fetch = EAGER)
     @JoinColumn(name = "recipe_id")
-    private Set<RecipeTag> tags = new HashSet<>();
+    private Set<String> tags = new HashSet<>();
 
-
-    public void addTag(RecipeTag tag){
-        tags.add(tag);
-    }
-
-    public void removeTag(RecipeTag tag){
-        tags.remove(tag);
-    }
+    @ManyToMany(fetch = EAGER,
+            cascade = {PERSIST, MERGE})
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     //<editor-fold desc="Getters and Setters">
     public String getName() {
@@ -60,12 +55,21 @@ public class Recipe{
         this.id = id;
     }
 
-    public Set<RecipeTag> getTags() {
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public Set<String> getTags() {
         return tags;
     }
 
-    public void setTags(Set<RecipeTag> tags) {
+    public void setTags(Set<String> tags) {
         this.tags = tags;
     }
+
     //</editor-fold>
 }

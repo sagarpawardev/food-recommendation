@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
@@ -28,18 +29,21 @@ public class RecipeController {
     @GetMapping(path = "recommend")
     @HystrixCommand(fallbackMethod = "fallbackGetRecommendation")
     public RecipeDto getRecommendation(
-            @RequestParam(name = "tags", required = false, defaultValue = EMPTY)  List<String> tags
+            @RequestParam(name = "tags", required = false, defaultValue = EMPTY)  Set<String> tags
     ) throws NotFoundException {
         return recipeFacade.getRecommendation(tags);
     }
 
     //<editor-fold desc="Fallback Method">
 
-    public RecipeDto fallbackGetRecommendation(List<String> tags){
-        RecipeDto recipe = new RecipeDto();
-        recipe.setName("Noting to Recommend");
-        recipe.setUrl(EMPTY);
-        return recipe;
+    public RecipeDto fallbackGetRecommendation(Set<String> tags, Throwable throwable){
+        if(throwable!=null) {
+            RecipeDto recipe = new RecipeDto();
+            recipe.setName("Noting to Recommend for tags: "+tags);
+            recipe.setUrl(EMPTY);
+            return recipe;
+        }
+        return null;
     }
 
     //</editor-fold>

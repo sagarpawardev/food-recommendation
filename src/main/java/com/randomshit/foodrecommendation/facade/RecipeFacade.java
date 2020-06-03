@@ -8,6 +8,7 @@ import com.randomshit.foodrecommendation.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class RecipeFacade {
@@ -18,7 +19,7 @@ public class RecipeFacade {
     @Autowired
     private RecipeService recipeService;
 
-    public RecipeDto getRecommendation(List<String> tags) throws NotFoundException {
+    public RecipeDto getRecommendation(Set<String> tags) throws NotFoundException {
         Recipe recipe = recipeService.getRecommendation(tags);
         return recipeConverter.convert(recipe);
     }

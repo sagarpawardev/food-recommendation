@@ -2,18 +2,10 @@ package com.randomshit.foodrecommendation.service;
 
 import com.randomshit.foodrecommendation.exception.NotFoundException;
 import com.randomshit.foodrecommendation.pojo.Recipe;
-import com.randomshit.foodrecommendation.pojo.RecipeList;
 import com.randomshit.foodrecommendation.repository.RecipeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.yaml.snakeyaml.Yaml;
-
-import javax.annotation.PostConstruct;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.OptionalInt;
-import java.util.Random;
+import java.util.*;
 
 @Service
 public class RecipeService {
@@ -30,16 +22,19 @@ public class RecipeService {
         return recipes;
     }
 
-    public Recipe getRecommendation(List<String> tags) throws NotFoundException {
-        List<Recipe> recipes;
+    public Recipe getRecommendation(Set<String> tags) throws NotFoundException {
+        final List<Recipe> recipes = new LinkedList<>();
 
         if (tags.isEmpty()) {
             // Fetch all
-            recipes = new ArrayList<>(0);
             recipeDao.findAll().forEach(recipes::add);
         } else {
             // Filter by tags
-            recipes = recipeDao.findByTags(tags);
+            recipeDao.findAll().forEach( recipe -> {
+                if(recipe.getTags().containsAll(tags)){
+                    recipes.add(recipe);
+                }
+            });
         }
 
 
@@ -54,17 +49,4 @@ public class RecipeService {
 
         throw new NotFoundException();
     }
-
-    //<editor-fold desc="Private Method">
-    @PostConstruct
-    private void loadRecipes() {
-        Yaml yml = new Yaml();
-        InputStream is = getClass().getClassLoader().getResourceAsStream("data/recipes.yml");
-        RecipeList recipeList = yml.loadAs(is, RecipeList.class);
-        for(Recipe recipe : recipeList.getRecipes()){
-            recipeDao.save(recipe);
-        }
-        recipeDao.saveAll(recipeList.getRecipes());
-    }
-    //</editor-fold>
 }

@@ -15,11 +15,12 @@ public class RecipeConverter implements Converter<Recipe, RecipeDto> {
 
     @Override
     public RecipeDto convert(Recipe source) {
-        Set<String> tags = new HashSet<>();
-        source.getTags().forEach(tag -> tags.add(tag.getTag()));
+
+        Set<String> ingredients = new HashSet<>();
+        source.getIngredients().forEach(ingredient -> ingredients.add(ingredient.getName()));
 
         RecipeDto recipeDto = modelMapper.map(source, RecipeDto.class);
-        recipeDto.setTags(tags);
+        recipeDto.setIngredients(ingredients);
 
         return recipeDto;
     }

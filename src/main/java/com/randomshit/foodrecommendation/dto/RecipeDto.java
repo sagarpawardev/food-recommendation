@@ -7,7 +7,9 @@ public class RecipeDto {
     private Set<String> tags;
     private String url;
     private String name;
+    private Set<String> ingredients;
 
+    //<editor-fold desc="Getters and Setters">
     public String getId() {
         return id;
     }
@@ -39,4 +41,13 @@ public class RecipeDto {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Set<String> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<String> ingredients) {
+        this.ingredients = ingredients;
+    }
+    //</editor-fold>
 }
