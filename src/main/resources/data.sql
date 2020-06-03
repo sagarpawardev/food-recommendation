@@ -123,7 +123,7 @@ INSERT INTO "INGREDIENT" VALUES
   ('GRAMFLOOR', 'besan'),
   ('BLACKGRAM', 'kaala-chana'),
   ('SAGO', 'sabu-daana'),
-  ('TOMATO', 'tamatar'),
+  ('TOMATO', 'tomato'),
   ('FISH', 'fish'),
   ('PRAWN', 'prawn'),
   ('CHICKEN', 'chicken'),
