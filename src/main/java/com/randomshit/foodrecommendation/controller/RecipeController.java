@@ -2,8 +2,10 @@ package com.randomshit.foodrecommendation.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.randomshit.foodrecommendation.dto.RecipeDto;
+import com.randomshit.foodrecommendation.dto.TagList;
 import com.randomshit.foodrecommendation.exception.NotFoundException;
 import com.randomshit.foodrecommendation.facade.RecipeFacade;
+import com.randomshit.foodrecommendation.facade.TagFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +22,9 @@ public class RecipeController {
     @Autowired
     private RecipeFacade recipeFacade;
 
+    @Autowired
+    private TagFacade tagFacade;
+
     @RequestMapping(method = GET)
     public List<RecipeDto> getRecipes(){
         return recipeFacade.getRecipes();
@@ -32,6 +37,12 @@ public class RecipeController {
             @RequestParam(name = "tags", required = false, defaultValue = EMPTY)  Set<String> tags
     ) throws NotFoundException {
         return recipeFacade.getRecommendation(tags);
+    }
+
+    @CrossOrigin
+    @GetMapping(path = "tags")
+    public TagList getTags(){
+        return tagFacade.getTags();
     }
 
     //<editor-fold desc="Fallback Method">

@@ -8,6 +8,8 @@
 
     <bean id="recipeConverter" class="com.randomshit.foodrecommendation.converter.RecipeConverter" />
 
+    <!-- Facades -->
     <bean id="recipeFacade" class="com.randomshit.foodrecommendation.facade.RecipeFacade"/>
+    <bean id="tagFacade" class="com.randomshit.foodrecommendation.facade.TagFacade"/>
 
 </beans>
